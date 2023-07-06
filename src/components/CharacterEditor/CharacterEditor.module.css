@@ -1,13 +1,18 @@
 .characterEditor {
   padding-top: 128px;
   padding-bottom: 64px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .maxWidthWrapper {
+  display: relative;
 }
 
 .header {
   padding-bottom: 64px;
+  width: 65%;
 }
 
 .title {
@@ -24,7 +29,47 @@
 }
 
 .characterWrapper {
+  min-height: 500px;
+  position: fixed;
+  right: 0;
+  width: 35%;
 }
 
 .controlColumn {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .controlColumn {
+    display: flex;
+    gap: 24px;
+    overflow: auto;
+    width: 100%;
+  }
+
+  .characterWrapper {
+    position: fixed;
+    top: 250px;
+    min-height: 500px;
+    width: 80%;
+    z-index: -1;
+  }
+
+  .characterEditor {
+    display: block;
+  }
+
+  .header {
+    width: 100%;
+  }
+}
+
+.perspectiveDecoration {
+  position: fixed;
+  background-color: hsl(195deg, 20%, 86%);
+  height: 40%;
+  width: 100%;
+  bottom: 0;
+  /* TODO: solve this without z-index */
+  z-index: -1;
 }
